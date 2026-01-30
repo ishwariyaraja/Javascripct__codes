@@ -4,6 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .coantainer{
+       display: grid;
+       place-items: center;
+       margin-top: 250px;
+      }
+      input{
+        display: flex;
+        flex-direction: column;
+         margin-bottom: 10px;
+         padding: 10px 15px;
+         border-radius: 10px;
+         border: 1px solid black;
+      }
+      button{
+        padding: 10px 15px;
+        width: 10%;
+        border-radius: 10px;
+        border: 1px solid black;
+        margin-top: 20px;
+      }
+      h1{
+        padding-bottom:20px ;
+      }
+    </style>
   </head>
   <body>
     <!-- <h1 id="result">show total mark</h1>
@@ -27,7 +57,7 @@
     } -->
     <!-- </script> -->
      
-    <h2>Student mark</h2>
+    <!-- <h2>Student mark</h2>
     <input type="number" name="" id="tamil"/> <br>
     <input type="number" name="" id="eng" /><br>
     <input type="number" name="" id="mat" /><br>
@@ -48,6 +78,67 @@
         document.getElementById("mark").innerHTML=result;
         
       }
-    </script>
+    </script> -->
+<div class="coantainer">
+     <h1>student mark and grad</h1>
+
+       <input type="number" name="" id="tamil" placeholder="tamil mark">
+       <input type="number" name="" id="eng" placeholder="eng mark">
+       <input type="number" name="" id="maths" placeholder="maths mark">
+       <input type="number" name="" id="sce" placeholder="secience mark">
+       <input type="number" name="" id="ss" placeholder="social mark">
+        <h1 id="std"></h1>
+      <button onclick="showmark()"> click </button>
+
+
+ </div>     
+        <script>
+          function showmark(){
+
+            let tamil =(document.getElementById("tamil").value);
+            let eng =(document.getElementById("eng").value);
+            let maths =(document.getElementById("maths").value);
+            let scei =(document.getElementById("sce").value);
+            let social =(document.getElementById("ss").value);
+
+             if (tamil==="" || eng===""|| maths===""||scei===""||social===""){
+              alert("please enter the mark");
+              return;
+             }
+               let total = Number(tamil+ eng + maths + scei+ social);
+               let avg =total/5;
+
+              //  pass fail statnment
+              let result="";
+              let grad = "";
+
+              if(tamil>=35 && eng>=35 && maths>=35 && scei>=35 && social>=35){
+                  result="pass";
+  
+               if(avg>=90){
+                grad="A"
+               }
+               else if(avg>=75){
+                grad="B"
+               }
+               else if( avg>=60){
+                grad="C"
+               }
+               else {
+                grad="D"
+               }
+            }
+              else{
+                result="fail"
+                grad="No Grad"
+              }
+          let student = document.getElementById("std").innerHTML=`result: ${result} <br>
+          grad: ${grad}`
+
+          }
+        </script>
+
+
+
   </body>
 </html>
