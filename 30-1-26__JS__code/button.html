@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1 id="result">show total mark</h1>
+  <button onclick="show()">click</button>
+
+  <script>
+    function show() {
+      let total = 10 + 20;
+      document.getElementById("result").innerHTML = total;
+    }
+  </script> -->
+
+    <!-- <h1 id="result">Totalmark:</h1>
+  <button onclick="totalmark()">click</button>
+  <script>
+    function totalmark(){
+
+        let mark = (4*8);
+   
+        document.getElementById("result").innerHTML= mark
+    } -->
+    <!-- </script> -->
+     
+    <h2>Student mark</h2>
+    <input type="number" name="" id="tamil"/> <br>
+    <input type="number" name="" id="eng" /><br>
+    <input type="number" name="" id="mat" /><br>
+    <input type="number" name="" id="sce" /><br>
+    <input type="number" name="" id="social" />
+
+    <h1 id="mark"></h1>
+
+    <button onclick="showmark()">TotalMark:</button>
+    <script>
+      function showmark() {
+        let tamil =Number (document.getElementById("tamil").value);
+        let eng =Number( document.getElementById("eng").value);
+        let mat =Number( document.getElementById("mat").value);
+        let sec = Number(document.getElementById("sce").value);
+        let ss = Number (document.getElementById("social").value);
+        let result =tamil+eng+mat+sec+ss;
+        document.getElementById("mark").innerHTML=result;
+        
+      }
+    </script>
+  </body>
+</html>
