@@ -27,8 +27,11 @@
                 sum+= Number(inputs[i].value);
                 count++
             }
-
         }
+          if(count === 0){
+                alert("please Enter the Number");
+                return
+            }
         let avg = sum/count;
         document.getElementById("total").innerHTML=`sum: ${sum}<br> count${count}  <br>Avg: ${
         avg}`
